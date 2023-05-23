@@ -31,7 +31,7 @@ namespace FinanScope.ViewModels
 
         private void AddSalary()
         {
-            // Реализуйте логику добавления зарплаты
+           //tut nada sdelat
         }
     }
 }

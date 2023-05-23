@@ -24,7 +24,7 @@ namespace FinanScope.ViewModels
         public MainViewModel()
         {
             Expenses = new ObservableCollection<ExpenseViewModel>();
-            // Здесь можно добавить код инициализации и загрузки данных
+            // inicializatsija i zagruzka
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
