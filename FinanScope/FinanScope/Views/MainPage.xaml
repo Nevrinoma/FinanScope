@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FinanScope.ViewModels"
              x:Class="FinanScope.Views.MainPage">
-    <ContentPage.Content>
-        <ListView ItemsSource="{Binding Expenses}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Expense.Description}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </ContentPage.Content>
+    <ContentPage.BindingContext>
+        <viewmodels:SalaryViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Label Text="{Binding TotalAmount}" />
+        <Label Text="{Binding MonthlySalary}" />
+        <Button Text="Добавить зарплату" Command="{Binding AddSalaryCommand}" />
+    </StackLayout>
 </ContentPage>

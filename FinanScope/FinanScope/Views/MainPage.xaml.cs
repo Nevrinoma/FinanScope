@@ -10,15 +10,12 @@ using Xamarin.Forms.Xaml;
 
 namespace FinanScope.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        private MainViewModel _viewModel;
-
         public MainPage()
         {
             InitializeComponent();
-            _viewModel = new MainViewModel();
-            BindingContext = _viewModel;
         }
     }
 }
