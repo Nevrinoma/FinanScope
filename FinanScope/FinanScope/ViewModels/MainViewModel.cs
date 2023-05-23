@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinanScope.Models;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -7,8 +9,10 @@ using System.Text;
 
 namespace FinanScope.ViewModels
 {
+
     public class MainViewModel : INotifyPropertyChanged
     {
+        private SQLiteConnection database;
         private ObservableCollection<ExpenseViewModel> _expenses;
 
         public ObservableCollection<ExpenseViewModel> Expenses
@@ -19,6 +23,30 @@ namespace FinanScope.ViewModels
                 _expenses = value;
                 OnPropertyChanged();
             }
+        }
+        private ObservableCollection<Salary> salaries;
+        public ObservableCollection<Salary> Salaries
+        {
+            get { return salaries; }
+            set { SetProperty(ref salaries, value); }
+        }
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(storage, value))
+                return false;
+
+            storage = value;
+            OnPropertyChanged(propertyName);
+            return true;
+        }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Получить данные из базы данных и присвоить их свойству Salaries
+            Salaries = new ObservableCollection<Salary>(database.Table<Salary>());
         }
 
         public MainViewModel()
