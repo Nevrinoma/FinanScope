@@ -17,5 +17,15 @@ namespace FinanScope.Views
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var mainViewModel = new MainViewModel();
+            mainViewModel.LoadSalaries();
+            BindingContext = mainViewModel;
+        }
+
+
     }
 }

@@ -14,6 +14,7 @@ namespace FinanScope.ViewModels
     {
         private SQLiteConnection database;
 
+
         private decimal totalAmount;
         public decimal TotalAmount
         {
@@ -30,28 +31,27 @@ namespace FinanScope.ViewModels
 
         public ICommand AddSalaryCommand { get; }
 
+
         public SalaryViewModel()
         {
+            AddSalaryCommand = new Command(AddSalary);
+
             string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "database.db");
             database = new SQLiteConnection(dbPath);
             database.CreateTable<Salary>();
         }
-        Salary salary = new Salary
-        {
-            Amount = 1000,
-            Date = DateTime.Now
-        };
+
 
         private void AddSalary()
         {
-            if ( > 0)
+            if (MonthlySalary > 0)
             {
-                var newSalary = new Salary { Amount = Salary, Date = DateTime.Now };
+                var newSalary = new Salary { Amount = MonthlySalary, Date = DateTime.Now };
                 database.Insert(newSalary);
 
-                // Обновить необходимые свойства, связанные с отображением данных из базы данных
-                // ...
+                //+отображение
             }
         }
+
     }
 }

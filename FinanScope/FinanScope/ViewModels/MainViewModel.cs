@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -39,18 +40,22 @@ namespace FinanScope.ViewModels
             OnPropertyChanged(propertyName);
             return true;
         }
-
-
-        protected override void OnAppearing()
+        public void LoadSalaries()
         {
-            base.OnAppearing();
-
-            // Получить данные из базы данных и присвоить их свойству Salaries
-            Salaries = new ObservableCollection<Salary>(database.Table<Salary>());
+            Salaries = new ObservableCollection<Salary>(database.Table<Salary>().ToList());
+            OnPropertyChanged(nameof(Salaries));
         }
+
+
+
+
 
         public MainViewModel()
         {
+            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "database.db");
+            database = new SQLiteConnection(dbPath);
+            database.CreateTable<Salary>();
+
             Expenses = new ObservableCollection<ExpenseViewModel>();
             // inicializatsija i zagruzka
         }
