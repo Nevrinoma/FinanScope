@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FinanScope.Views;
+
 
 namespace FinanScope
 {
