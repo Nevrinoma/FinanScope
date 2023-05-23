@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanScope.Android", "FinanScope\FinanScope.Android\FinanScope.Android.csproj", "{49EAAB98-9670-4419-82AA-DA8C1433699B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanScope", "FinanScope\FinanScope\FinanScope.csproj", "{4F636732-D22C-4AA7-9C12-E442D3BF9036}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49EAAB98-9670-4419-82AA-DA8C1433699B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F636732-D22C-4AA7-9C12-E442D3BF9036}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FED663B7-5889-4CB8-8B03-51A204D3252C}
+	EndGlobalSection
+EndGlobal
